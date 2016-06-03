@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <form action="" method="post">
-        {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
-        <input type="submit" />
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="" method="post">
+                {% csrf_token %}
+                <table class="table table-bordered table-hover">
+                    {{ form.as_table }}
+                </table>
+                <input type="submit" class="btn btn-primary" />
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

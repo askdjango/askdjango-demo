@@ -1,18 +1,43 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf8" />
-<title>AskDjango :: 장고 4기 신청마감 임박 !!!</title>
-</head>
-<body>
-    <h1>장고 차근차근 시작하기 4기, 신청마감 임박 !!!</h1>
+{% extends "base.html" %}
 
-    <hr />
-    {% if not user.is_authenticated %}
-        <a href="{% url "login" %}">로그인</a>
-        <a href="{% url "signup" %}">회원가입</a>
-    {% else %}
-        <a href="{% url "logout" %}">{{ user }}로그아웃</a>
-    {% endif %}
-</body>
-</html>
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+            <div class="jumbotron">
+                <h1>AskDjango</h1>
+                <p>여러분의 서비스 개발. 그 시작을 도와드리겠습니다.</p>
+                <p><a class="btn btn-primary btn-lg" href="http://festi.kr/class/django/">자세히 보기</a></p>
+            </div>
+
+            <div class="alert alert-info">
+                <ul>
+                    <li>본 웹사이트는 파이썬 웹프레임워크인 <strong>Django</strong>로 개발되었으며, 페이스북/카카오/네이버 로그인을 지원합니다.</li>
+                    <li>Microsoft Azure WebApp 을 통해 서비스되고 있습니다.</li>
+                </ul>
+            </div>
+
+            <div class="page-header">
+                <h3>AskDjango 오프라인 밀착강의</h3>
+            </div>
+
+            <ul class="media-list">
+                <li class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading">장고 차근차근 시작하기 4기</h4>
+                        <p>6월 6일 (월) 자정까지 신청을 받습니다.</p>
+                        <p><a class="btn btn-default" href="http://festi.kr/class/django/">자세히 보기</a></p>
+                    </div>
+                </li>
+                <li class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading">서비스 차근차근 시작하기 1기</h4>
+                        <p>6월 6일 (월) 자정까지 신청을 받습니다.</p>
+                        <p><a class="btn btn-default" href="http://festi.kr/class/django/">자세히 보기</a></p>
+                    </div>
+                </li>
+            </ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

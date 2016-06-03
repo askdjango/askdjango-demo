@@ -1,21 +1,31 @@
-{% extends "form.html" %}
+{% extends "base.html" %}
 {% load socialaccount %}
 
 {% block content %}
-    <h3>Login Form</h3>
-
-    {{ block.super }}
-
     {% get_providers as providers %}
 
-    <ul>
-    {% for provider in providers %}
-        <li>
-            <a title="{{ provider.name }}" href="{% provider_login_url provider.id process="login" scope=scope auth_params=auth_params %}">
-                {{ provider.name }} 계정으로 로그인
-            </a>
-        </li>
-    {% endfor %}
-    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <form action="" method="post">
+                    <legend>Login Form</legend>
+                    {% csrf_token %}
+                    <table class="table table-bordered table-hover">
+                        {{ form.as_table }}
+                    </table>
+                    <input type="submit" class="btn btn-primary" />
+                </form>
+
+                <hr/>
+
+                {% for provider in providers %}
+                    <a title="{{ provider.name }}" href="{% provider_login_url provider.id process="login" scope=scope auth_params=auth_params %}" class="btn btn-social btn-block btn-{{ provider.id }}">
+                        <i class="fa fa-{{ provider.id }}"></i>
+                        {{ provider.name }} 계정으로 로그인
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
