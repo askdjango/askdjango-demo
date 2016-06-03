@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8" />
+<title>AskDjango :: 장고 4기 신청마감 임박 !!!</title>
+</head>
+<body>
+    <h1>장고 차근차근 시작하기 4기, 신청마감 임박 !!!</h1>
+
+    <hr />
+    {% if not user.is_authenticated %}
+        <a href="{% url "login" %}">로그인</a>
+        <a href="{% url "signup" %}">회원가입</a>
+    {% else %}
+        <a href="{% url "logout" %}">{{ user }}로그아웃</a>
+    {% endif %}
+</body>
+</html>
