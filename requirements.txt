@@ -1,1 +1,3 @@
 django
+django-allauth
+beautifulsoup4

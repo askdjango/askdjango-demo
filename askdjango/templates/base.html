@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" />
 <link rel="stylesheet" href="{% static "bootstrap-social/bootstrap-social.css" %}" />
 <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}" />
+{% block extra_head %}{% endblock %}
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-static-top">
@@ -17,11 +18,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">AskDjango</a>
+				<a class="navbar-brand" href="/">AskDjango</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="http://festi.kr/about/" target="_blank">About</a></li>
+                    <li><a href="http://github.com/askdjango/askdjango-demo/" target="_blank">본 사이트 소스코드</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					{% if not user.is_authenticated %}

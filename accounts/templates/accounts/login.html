@@ -1,5 +1,29 @@
 {% extends "base.html" %}
-{% load socialaccount %}
+{% load socialaccount staticfiles %}
+
+{% block extra_head %}
+{{ block.super }}
+<style>
+.btn-kakao {
+    color: #3c3c3c;
+    background-color: #ffeb00;
+    border-color: #ffde00;
+}
+    .fa-kakao {
+        background: url("{% static "accounts/kakao-login-btn.png" %}") no-repeat left top;
+        background-size: cover;
+    }
+    .btn-naver {
+        color: #fff;
+        background-color: #1ec800;
+        border-color: #34b31e;
+    }
+    .fa-naver {
+        background: url("{% static "accounts/naver-login-btn-white.png" %}") no-repeat left top;
+        background-size: cover;
+    }
+</style>
+{% endblock %}
 
 {% block content %}
     {% get_providers as providers %}
