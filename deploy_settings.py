@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-PYTHON_VERSION = '2.7'
+PYTHON_VERSION = '3.4'
 
 assert(PYTHON_VERSION in ('3.4', '2.7'))
 

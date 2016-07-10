@@ -150,3 +150,4 @@ MEDIA_ROOT = join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = 'root'
 LOGOUT_REDIRECT_URL = 'root'
 
+APPEND_SLASH = False
